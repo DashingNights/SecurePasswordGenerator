@@ -31,4 +31,6 @@ jobs:
     - name: test
       run: |
         pytest Password_generator.py
+        y
+        10
         
