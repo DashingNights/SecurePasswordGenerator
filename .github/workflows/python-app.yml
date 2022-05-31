@@ -39,10 +39,6 @@ jobs:
       uses: JackMcKew/pyinstaller-action-windows@main
       with:
         path: src
-          
-    - name: compile
-      run: |
-        pyinstaller --onefile Password_generator.py
     - uses: actions/upload-artifact@v2
       with:
         name: out
