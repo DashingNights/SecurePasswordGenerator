@@ -38,14 +38,11 @@ jobs:
     - name: PyInstaller Windows
       uses: JackMcKew/pyinstaller-action-windows@main
       with:
-        path: src
-    - uses: actions/upload-artifact@v2
+        path: /
+        
+    - uses: actions/upload-artifact@v3
       with:
         name: out
-        path: src/dist/windows
-    - name: Download exe
-      uses: actions/download-artifact@v3
-      with:
-        name: out
-        path: Password_generator.exe
+        path: /dist/*
+        
 
