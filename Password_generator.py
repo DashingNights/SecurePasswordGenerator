@@ -49,3 +49,4 @@ elif choice == "n":
     static()
 else:
     print("Please enter a NUMBER.\n")
+
