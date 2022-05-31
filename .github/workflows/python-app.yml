@@ -42,7 +42,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: out
-        path: /home/runner/work/SecurePasswordGenerator/SecurePasswordGenerator/dist/Password_generator.exe
+        path: /home/runner/work/SecurePasswordGenerator/SecurePasswordGenerator/dist/*
     - name: Download exe
       uses: actions/download-artifact@v3
       with:
