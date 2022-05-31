@@ -35,14 +35,18 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: PyInstaller Windows
+      uses: JackMcKew/pyinstaller-action-windows@main
+      with:
+        path: src
+          
     - name: compile
       run: |
         pyinstaller --onefile Password_generator.py
-    - name: Upload 
-      uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v2
       with:
         name: out
-        path: /home/runner/work/SecurePasswordGenerator/SecurePasswordGenerator/dist/*
+        path: src/dist/windows
     - name: Download exe
       uses: actions/download-artifact@v3
       with:
