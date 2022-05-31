@@ -20,7 +20,7 @@ def custom():
         random.sample(''.join(random.sample(abc1 + digi1 + specichar1, customlength1)), customlength1))
     print("length: " + str(len(generatedpw1)))
     print(generatedpw1)
-
+    input("")
 
 # defined password length
 def static():
@@ -39,6 +39,7 @@ def static():
 
     print("length: " + str(len(generatedpw)))
     print(generatedpw)
+    input("")
 
 
 # ask for user input
