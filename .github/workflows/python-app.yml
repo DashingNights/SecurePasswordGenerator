@@ -38,4 +38,13 @@ jobs:
     - name: compile
       run: |
         pyinstaller --onefile Password_generator.py
+    - name: Upload math result for job 1
+      uses: actions/upload-artifact@v3
+      with:
+        name: out
+        path: PasswordGenerator.exe
+    - name: Download exe
+      uses: actions/download-artifact@v3
+      with:
+        name: out
 
