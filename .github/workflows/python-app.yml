@@ -42,7 +42,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: out
-        path: dist/Password_generator.exe
+        path: /dist/Password_generator.exe
     - name: Download exe
       uses: actions/download-artifact@v3
       with:
