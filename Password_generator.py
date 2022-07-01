@@ -1,3 +1,4 @@
+from math import factorial
 import random
 import string
 
@@ -19,6 +20,7 @@ def custom():
     generatedpw1 = ''.join(
         random.sample(''.join(random.sample(abc1 + digi1 + specichar1, customlength1)), customlength1))
     print("length: " + str(len(generatedpw1)))
+    print("Number of possiblities: ", int(possiblities(generatedpw1)))
     print(generatedpw1)
     input("")
 
@@ -38,15 +40,25 @@ def static():
         random.sample(generatedpw, lengthstatic)
 
     print("length: " + str(len(generatedpw)))
+    print("Number of possiblities: ", int(possiblities(generatedpw)))
     print(generatedpw)
     input("")
 
 
+# Calculate possiblities using factorial formulas
+def possiblities(password):
+    raw_amount = factorial(len(password))
+    for i in password:
+        if password.count(i) != 0:
+            raw_amount/=factorial(password.count(i))
+    return raw_amount
+
+
 # ask for user input
 choice = str(input("custom length, input y, generic length, input n:\n"))
-if choice == "y":
+if choice.lower() == "y":
     custom()
-elif choice == "n":
+elif choice.lower() == "n":
     static()
 else:
     print("Please enter a NUMBER.\n")
